@@ -1,0 +1,6 @@
+@import "@/assets/css/variables.scss";
+
+.navigation{
+    @include flex_horizontal_between;
+    padding: 2rem;
+}

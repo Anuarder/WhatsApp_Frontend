@@ -1,0 +1,14 @@
+@import "@/assets/css/variables.scss";
+
+.toolbar{
+    height: 100px;
+    padding: 0 2rem;
+    @include flex_horizontal_between;
+    &__button{
+        visibility: hidden;
+    }
+    &__actions{
+        font-weight: 700;
+        font-size: 1.1rem;
+    }
+}

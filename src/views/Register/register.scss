@@ -1,0 +1,18 @@
+@import "@/assets/css/variables.scss";
+
+.register{
+    text-align: left;
+    &__content{
+        width: 600px;
+        max-width: 600px;
+    }
+    &__input{
+        @include flex_vertical_center;
+        label{
+            width: 170px;
+        }
+        input{
+            margin-left: 1rem;
+        }
+    }
+}

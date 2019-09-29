@@ -1,0 +1,37 @@
+@import "@/assets/css/variables.scss";
+
+.sidebar{
+    height: 100vh;
+    background: linear-gradient(212.82deg, #A3219D 0%, #30154E 100%);
+    box-shadow: 0px 0px 15px rgba(173, 173, 173, 0.25);
+    width: 290px;
+    &__logo{
+        height: 100px;
+        padding: 0 2rem;
+        @include flex_vertical_center;
+    }
+    &__container{
+        @include flex_center;
+    }
+    &__links{
+        margin-top: 5rem;
+        color: #fff;
+        font-size: 1.1rem;
+    }
+    &__link{
+        @include flex_center;
+        width: 210px;
+        height: 40px;
+        margin-top: 2rem;
+        border-radius: 40px;
+        &__active{
+            border: 1px solid #FFFFFF;
+        }
+        &:hover{
+            border: 1px solid #FFFFFF;
+        }
+        &:first-child{
+            margin-top: 0;
+        }
+    }
+}

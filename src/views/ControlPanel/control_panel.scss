@@ -1,0 +1,18 @@
+@import "@/assets/css/variables.scss";
+
+.control-panel{
+    display: flex;
+    max-height: 100vh;
+    overflow: hidden;
+    &__container{
+        width: 100%;
+        overflow: hidden;
+        background-color: #F9FBFA;
+    }
+    &__content{
+        padding: 0 2rem;
+        width: 100%;
+        height: 100%;
+        overflow-y: auto;
+    }
+}

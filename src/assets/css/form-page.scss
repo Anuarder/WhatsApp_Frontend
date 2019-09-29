@@ -1,0 +1,43 @@
+@import "@/assets/css/variables.scss";
+
+.form-page{
+    width: 100%;
+    text-align: center;
+}
+
+.form-page__container{
+    margin-top: 2rem;
+    @include flex_horizontal_center;
+}
+
+.form-page__title{
+    font-size: 2rem;
+    text-align: center;
+}
+
+.form-page__form{
+    margin-top: 3rem;
+}
+
+.form-page__input{
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    input{
+        text-align: center;
+        @include input_reset;
+        padding: 0 2rem;
+        width: 100%;
+        height: 60px;
+        background-color: #fafafa;
+        border-radius: 1rem;
+    }
+}
+
+.form-page__link{
+    margin-top: 2rem;
+}
+
+.form-page__button{
+    margin-top: 2rem;
+    text-align: center;
+}
