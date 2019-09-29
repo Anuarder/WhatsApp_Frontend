@@ -7,6 +7,7 @@ import PasswordReset from './views/PasswordReset/PasswordReset.vue'
 import ControlPanel from './views/ControlPanel/ControlPanel.vue'
 import Subscriptions from './views/ControlPanel/Subscriptions/Subscriptions.vue'
 import UserData from './views/ControlPanel/UserData/UserData.vue'
+import UserPasswordReset from './views/ControlPanel/PasswordReset/PasswordReset.vue'
 
 Vue.use(Router)
 
@@ -42,13 +43,18 @@ export default new Router({
             children: [
                 {
                     path: '/user/subscriptions',
-                    name: '/user/subscriptions',
+                    name: 'user_subscriptions',
                     component: Subscriptions
                 },
                 {
                     path: '/user/data',
-                    name: '/user/data',
+                    name: 'user_data',
                     component: UserData
+                },
+                {
+                    path: '/user/password-reset',
+                    name: 'user_password-reset',
+                    component: UserPasswordReset
                 },
             ]
         },
