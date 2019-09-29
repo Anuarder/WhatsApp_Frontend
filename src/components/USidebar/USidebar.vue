@@ -30,6 +30,10 @@ export default {
                 {
                     name: 'Личные данные',
                     path: 'data'
+                },
+                {
+                    name: 'Сменить пароль',
+                    path: 'password-reset'
                 }
             ],
             admin_links: [

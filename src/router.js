@@ -6,6 +6,7 @@ import Register from './views/Register/Register.vue'
 import PasswordReset from './views/PasswordReset/PasswordReset.vue'
 import ControlPanel from './views/ControlPanel/ControlPanel.vue'
 import Subscriptions from './views/ControlPanel/Subscriptions/Subscriptions.vue'
+import UserData from './views/ControlPanel/UserData/UserData.vue'
 
 Vue.use(Router)
 
@@ -43,7 +44,12 @@ export default new Router({
                     path: '/user/subscriptions',
                     name: '/user/subscriptions',
                     component: Subscriptions
-                }
+                },
+                {
+                    path: '/user/data',
+                    name: '/user/data',
+                    component: UserData
+                },
             ]
         },
     ]
