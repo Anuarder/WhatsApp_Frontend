@@ -6,7 +6,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
     state: {
         user: {
-            role: 'user'
+            role: 'admin'
         },
         token: null
     },

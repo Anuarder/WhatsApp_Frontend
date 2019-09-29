@@ -8,6 +8,8 @@ import ControlPanel from './views/ControlPanel/ControlPanel.vue'
 import Subscriptions from './views/ControlPanel/Subscriptions/Subscriptions.vue'
 import UserData from './views/ControlPanel/UserData/UserData.vue'
 import UserPasswordReset from './views/ControlPanel/PasswordReset/PasswordReset.vue'
+import AdminSubscriptions from './views/ControlPanel/Admin/Subscriptions/Subscriptions.vue'
+import AdminCreateSubscriptions from './views/ControlPanel/Admin/Subscriptions/CreateSubscriptions/CreateSubscriptions.vue'
 
 Vue.use(Router)
 
@@ -38,7 +40,7 @@ export default new Router({
         {
             path: '/user',
             name: 'user',
-            redirect: '/user/subscriptions',
+            redirect: '/user/admin-subscriptions',
             component: ControlPanel,
             children: [
                 {
@@ -55,6 +57,16 @@ export default new Router({
                     path: '/user/password-reset',
                     name: 'user_password-reset',
                     component: UserPasswordReset
+                },
+                {
+                    path: '/user/admin-subscriptions',
+                    name: 'user_admin-subscriptions',
+                    component: AdminSubscriptions
+                },
+                {
+                    path: '/user/admin-create-subscriptions',
+                    name: 'user_admin-create-subscriptions',
+                    component: AdminCreateSubscriptions
                 },
             ]
         },

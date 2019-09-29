@@ -39,19 +39,19 @@ export default {
             admin_links: [
                 {
                     name: 'Сообщения',
-                    path: 'admin_messages'
+                    path: 'admin-messages'
                 },
                 {
                     name: 'Пользователи',
-                    path: 'admin_users'
+                    path: 'admin-users'
                 },
                 {
                     name: 'Промокоды',
-                    path: 'admin_promocodes'
+                    path: 'admin-promocodes'
                 },
                 {
                     name: 'Подписки',
-                    path: 'admin_subscriptions'
+                    path: 'admin-subscriptions'
                 },
             ]
         }
