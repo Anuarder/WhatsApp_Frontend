@@ -3,7 +3,7 @@
         <div class="create__content">
             <div class="create__form">
                 <div class="create__back">
-                    <img src="@/assets/images/arrow_back.svg" alt="back">
+                    <i class="material-icons">arrow_back_ios</i>
                     <u>
                         СОЗДАТЬ ПОДПИСКУ
                     </u>

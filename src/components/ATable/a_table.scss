@@ -21,9 +21,14 @@
             background-color: #fff;
         }
         &__actions{
+            @include flex_vertical_center;
             cursor: pointer;
             justify-self: end;
             padding-right: 2.5rem;
+            i{
+                font-size: 2.5rem;
+                color: #585858;
+            }
         }
     }
     &__empty{

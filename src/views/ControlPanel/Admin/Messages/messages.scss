@@ -1,0 +1,35 @@
+@import "@/assets/css/variables.scss";
+
+.messages{
+    &__form{
+        &__date{
+            display: flex;
+            align-items: center;
+            width: fit-content; 
+            position: relative;
+            i{
+                position: absolute;
+                right: 1rem;
+            }
+        }
+        &__actions{
+            margin-top: 2rem;
+            @include flex_horizontal_between;
+        }
+        &__textarea{
+            margin-top: 2rem;
+            textarea{
+                @include input_reset;
+                font-family: 'Roboto', sans-serif;
+                width: 100%;
+                overflow: auto;
+                background: #FFFFFF;
+                border-radius: 1rem;
+                padding: 1.5rem;
+                height: 150px;
+                max-height: 150px;
+                resize: none;
+            }
+        }
+    }
+}

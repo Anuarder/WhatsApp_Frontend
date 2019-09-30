@@ -2,12 +2,13 @@
 
 .control-panel{
     display: flex;
+    min-height: 100vh;
     max-height: 100vh;
+    background-color: #e7e7e7;
     overflow: hidden;
     &__container{
         width: 100%;
         overflow: hidden;
-        background-color: #F9FBFA;
     }
     &__content{
         padding: 0 2rem;

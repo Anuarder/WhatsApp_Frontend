@@ -14,6 +14,7 @@ import AdminPromocodes from './views/ControlPanel/Admin/Promocodes/Promocodes.vu
 import AdminCreatePromocode from './views/ControlPanel/Admin/Promocodes/CreatePromocode.vue'
 import AdminUsers from './views/ControlPanel/Admin/Users/Users.vue'
 import AdminCreateUser from './views/ControlPanel/Admin/Users/CreateUser.vue'
+import AdminMessages from './views/ControlPanel/Admin/Messages/Messages.vue'
 
 Vue.use(Router)
 
@@ -91,6 +92,11 @@ export default new Router({
                     path: '/user/admin-create-user',
                     name: 'user_admin-create-user',
                     component: AdminCreateUser
+                },
+                {
+                    path: '/user/admin-messages',
+                    name: 'user_admin-messages',
+                    component: AdminMessages
                 },
             ]
         },
