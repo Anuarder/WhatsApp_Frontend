@@ -1,8 +1,10 @@
 <template>
-    <div class="subscriptions">
+    <div class="promocodes">
         <a-table 
             :headers="headers" 
-            :data="subscriptions"
+            :data="promocodes"
+            create="Создать промокод"
+            to="/user/admin-create-promocode"
             actions>
         </a-table>
     </div>
@@ -21,19 +23,24 @@ export default {
                     value: 'name'
                 },
                 {
-                    title: 'Цена, KZT',
-                    value: 'price'
+                    title: 'Проценты %',
+                    value: 'percent'
                 },
                 {
-                    title: 'Скидочная цена',
-                    value: 'discount_price'
+                    title: 'Кол-во <br> использования',
+                    value: 'use_amount'
+                },
+                {
+                    title: 'Дата',
+                    value: 'date'
                 },
             ],
-            subscriptions: [
+            promocodes: [
                 {
                     name: 'Подписка',
-                    price: '150',
-                    discount_price: '150'
+                    percent: '150',
+                    use_amount: '5',
+                    date: '25.10.19 12:00:05'
                 }
             ]
         }

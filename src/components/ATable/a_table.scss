@@ -1,11 +1,9 @@
 @import "@/assets/css/variables.scss";
 
-
-.subscriptions{
+.a-table{
     &__header, &__body__content{
         margin-left: 2.5rem;
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
         font-size: 1.1rem;
     }
     &__header{
@@ -36,6 +34,13 @@
         }
         button{
             margin-top: 2rem;
+        }
+    }
+    &__button{
+        @include flex_horizontal_end;
+        margin-bottom: 3rem;
+        span{
+            margin-right: 1rem;
         }
     }
 }

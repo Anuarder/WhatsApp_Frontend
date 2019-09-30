@@ -1,28 +1,27 @@
 <template>
-    <div class="create-subscriptions">
-        <div class="create-subscriptions__content">
-            
-            <div class="create-subscriptions__form">
-                <div class="create-subscriptions__back">
+    <div class="create-subscription">
+        <div class="create-subscription__content">
+            <div class="create-subscription__form">
+                <div class="create-subscription__back">
                     <img src="@/assets/images/arrow_back.svg" alt="back">
                     <u>
                         СОЗДАТЬ ПОДПИСКУ
                     </u>
                 </div>
                 <form>
-                    <div class="create-subscriptions__input">
+                    <div class="create-subscription__input">
                         <label>Название подписки</label>
                         <input type="text" v-model="a">
                     </div>
-                    <div class="create-subscriptions__input">
+                    <div class="create-subscription__input">
                         <label>Цена</label>
                         <input type="text" v-model="a">
                     </div>
-                    <div class="create-subscriptions__input">
+                    <div class="create-subscription__input">
                         <label>Скидочная цена</label>
                         <input type="text" v-model="a">
                     </div>
-                    <div class="create-subscriptions__buttons">
+                    <div class="create-subscription__buttons">
                         <button class="w-button">
                             Сохранить
                         </button>
@@ -47,5 +46,5 @@ export default {
 <style 
     lang="scss" 
     scoped
-    src="./create_subscriptions.scss">
+    src="./create_subscription.scss">
 </style>

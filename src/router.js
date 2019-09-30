@@ -9,7 +9,10 @@ import Subscriptions from './views/ControlPanel/Subscriptions/Subscriptions.vue'
 import UserData from './views/ControlPanel/UserData/UserData.vue'
 import UserPasswordReset from './views/ControlPanel/PasswordReset/PasswordReset.vue'
 import AdminSubscriptions from './views/ControlPanel/Admin/Subscriptions/Subscriptions.vue'
-import AdminCreateSubscriptions from './views/ControlPanel/Admin/Subscriptions/CreateSubscriptions/CreateSubscriptions.vue'
+import AdminCreateSubscription from './views/ControlPanel/Admin/Subscriptions/CreateSubscription/CreateSubscription.vue'
+import AdminPromocodes from './views/ControlPanel/Admin/Promocodes/Promocodes.vue'
+import AdminCreatePromocode from './views/ControlPanel/Admin/Promocodes/CreatePromocode/CreatePromocode.vue'
+import AdminUsers from './views/ControlPanel/Admin/Users/Users.vue'
 
 Vue.use(Router)
 
@@ -64,9 +67,24 @@ export default new Router({
                     component: AdminSubscriptions
                 },
                 {
-                    path: '/user/admin-create-subscriptions',
-                    name: 'user_admin-create-subscriptions',
-                    component: AdminCreateSubscriptions
+                    path: '/user/admin-create-subscription',
+                    name: 'user_admin-create-subscription',
+                    component: AdminCreateSubscription
+                },
+                {
+                    path: '/user/admin-promocodes',
+                    name: 'user_admin-promocodes',
+                    component: AdminPromocodes
+                },
+                {
+                    path: '/user/admin-create-promocode',
+                    name: 'user_admin-create-promocode',
+                    component: AdminCreatePromocode
+                },
+                {
+                    path: '/user/admin-users',
+                    name: 'user_admin-users',
+                    component: AdminUsers
                 },
             ]
         },
