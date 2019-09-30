@@ -1,29 +1,37 @@
 <template>
     <div class="user-data">
-        <div class="user-data__content">
-            <div class="user-data__form">
+        <div class="create__content">
+            <div class="create__form">
                 <form>
-                    <div class="user-data__input">
+                    <div class="create__input">
                         <label>Имя</label>
-                        <input type="text" v-model="first_name" v-if="isEdit">
-                        <span v-else>{{first_name}}</span>
+                        <div class="create__input__container">
+                            <input type="text" v-model="first_name" v-if="isEdit">
+                            <span v-else>{{first_name}}</span>
+                        </div>
                     </div>
-                    <div class="user-data__input">
+                    <div class="create__input">
                         <label>Фамилия</label>
-                        <input type="text" v-model="last_name" v-if="isEdit">
-                        <span v-else>{{last_name}}</span>
+                        <div class="create__input__container">
+                            <input type="text" v-model="last_name" v-if="isEdit">
+                            <span v-else>{{last_name}}</span>
+                        </div>
                     </div>
-                    <div class="user-data__input">
+                    <div class="create__input">
                         <label>Email</label>
-                        <input type="text" v-model="email" v-if="isEdit">
-                        <span v-else>{{email}}</span>
+                        <div class="create__input__container">
+                            <input type="text" v-model="email" v-if="isEdit">
+                            <span v-else>{{email}}</span>
+                        </div>
                     </div>
-                    <div class="user-data__input">
+                    <div class="create__input">
                         <label>Ваш номер</label>
-                        <input type="text" v-model="phone" v-if="isEdit">
-                        <span v-else>{{phone}}</span>
+                        <div class="create__input__container">
+                            <input type="text" v-model="phone" v-if="isEdit">
+                            <span v-else>{{phone}}</span>
+                        </div>
                     </div>
-                    <div class="user-data__buttons" v-if="isEdit">
+                    <div class="create__buttons" v-if="isEdit">
                         <button class="w-button" @click="isEdit = false">
                             Сохранить
                         </button>
@@ -34,7 +42,7 @@
                 </form>
             </div>
             <div 
-                class="user-data__actions" 
+                class="create__actions" 
                 v-if="!isEdit"
                 @click="isEdit = true">
                 <img src="@/assets/images/edit.svg" alt="edit">
@@ -56,8 +64,3 @@ export default {
     }
 }
 </script>
-<style 
-    lang="scss" 
-    scoped
-    src="./user_data.scss">
-</style>

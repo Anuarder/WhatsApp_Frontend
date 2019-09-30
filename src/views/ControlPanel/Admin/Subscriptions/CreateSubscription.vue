@@ -1,27 +1,33 @@
 <template>
     <div class="create-subscription">
-        <div class="create-subscription__content">
-            <div class="create-subscription__form">
-                <div class="create-subscription__back">
+        <div class="create__content">
+            <div class="create__form">
+                <div class="create__back">
                     <img src="@/assets/images/arrow_back.svg" alt="back">
                     <u>
                         СОЗДАТЬ ПОДПИСКУ
                     </u>
                 </div>
                 <form>
-                    <div class="create-subscription__input">
+                    <div class="create__input">
                         <label>Название подписки</label>
-                        <input type="text" v-model="a">
+                        <div class="create__input__container">
+                            <input type="text" v-model="a">
+                        </div>
                     </div>
-                    <div class="create-subscription__input">
+                    <div class="create__input">
                         <label>Цена</label>
-                        <input type="text" v-model="a">
+                        <div class="create__input__container">
+                            <input type="text" v-model="a">
+                        </div>
                     </div>
-                    <div class="create-subscription__input">
+                    <div class="create__input">
                         <label>Скидочная цена</label>
-                        <input type="text" v-model="a">
+                        <div class="create__input__container">
+                            <input type="text" v-model="a">
+                        </div>
                     </div>
-                    <div class="create-subscription__buttons">
+                    <div class="create__buttons">
                         <button class="w-button">
                             Сохранить
                         </button>
@@ -43,8 +49,3 @@ export default {
     }
 }
 </script>
-<style 
-    lang="scss" 
-    scoped
-    src="./create_subscription.scss">
-</style>

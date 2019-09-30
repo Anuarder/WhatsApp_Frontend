@@ -1,43 +1,45 @@
 <template>
     <div class="create-promocode">
-        <div class="create-promocode__content">
-            <div class="create-promocode__form">
-                <div class="create-promocode__back">
+        <div class="create__content">
+            <div class="create__form">
+                <div class="create__back">
                     <img src="@/assets/images/arrow_back.svg" alt="back">
                     <u>
                         СОЗДАТЬ ПРОМОКОД
                     </u>
                 </div>
                 <form>
-                    <div class="create-promocode__input">
+                    <div class="create__input">
                         <label>Название промокода</label>
-                        <div class="create-promocode__input__container">
+                        <div class="create__input__container">
                             <input type="text" v-model="a">
                         </div>
                     </div>
-                    <div class="create-promocode__input">
+                    <div class="create__input">
                         <label>Действителен до</label>
-                        <div class="create-promocode__input__container">
+                        <div class="create__input__container">
                             <input type="text" v-model="a">
                         </div>
                     </div>
-                    <div class="create-promocode__input">
+                    <div class="create__input">
                         <label>Проценты</label>
-                        <div class="create-promocode__input__container">
+                        <div class="create__input__container">
                             <input type="text" v-model="a">
                         </div>
                     </div>
-                    <div class="create-promocode__input">
+                    <div class="create__input">
                         <label>Промокод можно <br> использовать</label>
-                        <div class="create-promocode__input__container">
-                            <select class="mr-1">
-                                <option value="">неограниченно</option>
-                            </select>
-                            <input type="number" value="5" class="mr-1">
+                        <div class="create__input__container">
+                            <div class="create__input__select mr-2">
+                                <select>
+                                    <option value="">неограниченно</option>
+                                </select>
+                            </div>
+                            <input type="number" value="5" class="mr-2">
                             раз
                         </div>
                     </div>
-                    <div class="create-promocode__buttons">
+                    <div class="create__buttons">
                         <button class="w-button">
                             Сохранить
                         </button>
@@ -59,8 +61,3 @@ export default {
     }
 }
 </script>
-<style 
-    lang="scss" 
-    scoped
-    src="./create_promocode.scss">
-</style>

@@ -64,10 +64,5 @@
 <style 
     lang="scss" 
     scoped
-    src="@/assets/css/form-page.scss">
-</style>
-<style 
-    lang="scss" 
-    scoped
     src="./login.scss">
 </style>

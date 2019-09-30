@@ -53,10 +53,5 @@
 <style 
     lang="scss" 
     scoped
-    src="@/assets/css/form-page.scss">
-</style>
-<style 
-    lang="scss" 
-    scoped
     src="./password_reset.scss">
 </style>

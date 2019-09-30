@@ -9,10 +9,11 @@ import Subscriptions from './views/ControlPanel/Subscriptions/Subscriptions.vue'
 import UserData from './views/ControlPanel/UserData/UserData.vue'
 import UserPasswordReset from './views/ControlPanel/PasswordReset/PasswordReset.vue'
 import AdminSubscriptions from './views/ControlPanel/Admin/Subscriptions/Subscriptions.vue'
-import AdminCreateSubscription from './views/ControlPanel/Admin/Subscriptions/CreateSubscription/CreateSubscription.vue'
+import AdminCreateSubscription from './views/ControlPanel/Admin/Subscriptions/CreateSubscription.vue'
 import AdminPromocodes from './views/ControlPanel/Admin/Promocodes/Promocodes.vue'
-import AdminCreatePromocode from './views/ControlPanel/Admin/Promocodes/CreatePromocode/CreatePromocode.vue'
+import AdminCreatePromocode from './views/ControlPanel/Admin/Promocodes/CreatePromocode.vue'
 import AdminUsers from './views/ControlPanel/Admin/Users/Users.vue'
+import AdminCreateUser from './views/ControlPanel/Admin/Users/CreateUser.vue'
 
 Vue.use(Router)
 
@@ -85,6 +86,11 @@ export default new Router({
                     path: '/user/admin-users',
                     name: 'user_admin-users',
                     component: AdminUsers
+                },
+                {
+                    path: '/user/admin-create-user',
+                    name: 'user_admin-create-user',
+                    component: AdminCreateUser
                 },
             ]
         },
