@@ -1,14 +1,9 @@
 @import "@/assets/css/variables.scss";
-.message{
-    outline: none;
-    background-color: #fff;
-    border: 1px solid #000;
-    height: 100px;
-    max-height: 100px;
-    overflow: auto;
-}
 
 .messages{
+    &__editor{
+        background-color: #fff;
+    }
     &__content{
         height: 100vh;
     }

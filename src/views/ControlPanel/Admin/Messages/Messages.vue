@@ -2,10 +2,18 @@
     <div class="messages">
         <div class="messages__content">
             <div class="messages__date">
-                <input type="text" placeholder="Введите дату">
+                <datetime 
+                    type="datetime" 
+                    zone="UTC+6" 
+                    input-class="input-date" 
+                    placeholder="Выберите дату"
+                    v-model="date">
+                </datetime>
             </div>
             <div class="messages__text">
-                <editor-menu-bar :editor="editor" v-slot="{ commands, isActive }">
+                <editor-menu-bar 
+                    :editor="editor" 
+                    v-slot="{ commands, isActive }">
                     <div class="menu-bar">
                         <button 
                             :class="{ 'is-active': isActive.bold() }" 
@@ -27,7 +35,9 @@
                         </button>
                     </div>
                 </editor-menu-bar>
-                <editor-content :editor="editor" class="message"/>
+                <editor-content 
+                    :editor="editor" 
+                    class="messages__editor"/>
                 <div class="messages__text__actions">
                     <button @click="sendMessage">Отправить</button>
                     <button @click="setMessage">Создать</button>
@@ -60,14 +70,14 @@
 <script>
 import { Editor, EditorContent, EditorMenuBar  } from 'tiptap'
 import {  Bold, Italic, Strike } from 'tiptap-extensions'
-
 export default {
     components: {
         EditorContent,
-        EditorMenuBar 
+        EditorMenuBar,
     },
     data(){
         return{
+            date: '',
             editor: null,
             message: '',
             messages: [
@@ -127,9 +137,6 @@ export default {
                 new Italic(),
                 new Strike(),
             ],
-            onInit({ state }){
-                console.log(state)
-            },
             onUpdate: ({ getHTML }) => {
                 this.message = getHTML();
             }
