@@ -5,11 +5,32 @@
                 <input type="text" placeholder="Введите дату">
             </div>
             <div class="messages__text">
-                <textarea placeholder="Введите сообщение"></textarea>
+                <editor-menu-bar :editor="editor" v-slot="{ commands, isActive }">
+                    <div class="menu-bar">
+                        <button 
+                            :class="{ 'is-active': isActive.bold() }" 
+                            class="menu-item"
+                            @click="commands.bold">
+                            Bold
+                        </button>
+                        <button 
+                            :class="{ 'is-active': isActive.italic() }" 
+                            class="menu-item"
+                            @click="commands.italic">
+                            Italic
+                        </button>
+                        <button 
+                            :class="{ 'is-active': isActive.strike() }" 
+                            class="menu-item"
+                            @click="commands.strike">
+                            Strike
+                        </button>
+                    </div>
+                </editor-menu-bar>
+                <editor-content :editor="editor" class="message"/>
                 <div class="messages__text__actions">
-                    <button>Ж</button>
-                    <button>Ч</button>
-                    <button>I</button>
+                    <button @click="sendMessage">Отправить</button>
+                    <button @click="setMessage">Создать</button>
                 </div>
             </div>
             <div class="messages__container">
@@ -37,9 +58,18 @@
     </div>
 </template>
 <script>
+import { Editor, EditorContent, EditorMenuBar  } from 'tiptap'
+import {  Bold, Italic, Strike } from 'tiptap-extensions'
+
 export default {
+    components: {
+        EditorContent,
+        EditorMenuBar 
+    },
     data(){
         return{
+            editor: null,
+            message: '',
             messages: [
                 {
                     id: 1,
@@ -87,6 +117,33 @@ export default {
                     message: 'Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке, а начинающему оратору отточить навык публичных выступлений в домашних условиях. При создании генератора мы использовали небезизвестный универсальный код речей'
                 },
             ]
+        }
+    },
+    mounted(){
+        this.editor = new Editor({
+            content: '',
+            extensions: [
+                new Bold(),
+                new Italic(),
+                new Strike(),
+            ],
+            onInit({ state }){
+                console.log(state)
+            },
+            onUpdate: ({ getHTML }) => {
+                this.message = getHTML();
+            }
+        })
+    },
+    beforeDestroy() {
+        this.editor.destroy();
+    },
+    methods: {
+        sendMessage(){
+            console.log(this.message);
+        },
+        setMessage(){
+            this.editor.setContent('<p>This is <strong>some</strong> inserted text. 👋</p>')
         }
     }
 }

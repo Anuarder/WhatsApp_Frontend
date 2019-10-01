@@ -9,9 +9,14 @@
   },
   "dependencies": {
     "core-js": "^2.6.5",
+    "luxon": "^1.19.3",
+    "tiptap": "^1.26.0",
+    "tiptap-extensions": "^1.28.0",
     "vue": "^2.6.10",
+    "vue-datetime": "^1.0.0-beta.10",
     "vue-router": "^3.0.3",
-    "vuex": "^3.0.1"
+    "vuex": "^3.0.1",
+    "weekstart": "^1.0.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.11.0",
