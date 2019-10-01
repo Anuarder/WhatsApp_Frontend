@@ -41,7 +41,7 @@
                         <div 
                             class="a-table__body__actions" 
                             v-if="actions">
-                            <i class="material-icons">more_horiz</i>
+                            <v-actions></v-actions>
                         </div>
                     </div>
                 </div>

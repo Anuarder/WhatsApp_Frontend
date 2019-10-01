@@ -12,30 +12,43 @@
                     <div class="create__input">
                         <label>Название промокода</label>
                         <div class="create__input__container">
-                            <input type="text" v-model="a">
+                            <input 
+                                type="text" 
+                                class="create__input__element"
+                                v-model="a">
                         </div>
                     </div>
                     <div class="create__input">
                         <label>Действителен до</label>
                         <div class="create__input__container">
-                            <input type="text" v-model="a">
+                            <datetime 
+                                zone="UTC+6" 
+                                input-class="input-date" 
+                                placeholder="Выберите дату"
+                                v-model="date">
+                            </datetime> 
                         </div>
                     </div>
                     <div class="create__input">
                         <label>Проценты</label>
                         <div class="create__input__container">
-                            <input type="text" v-model="a">
+                            <input 
+                                type="text" 
+                                class="create__input__element"
+                                v-model="a"  >
                         </div>
                     </div>
                     <div class="create__input">
                         <label>Промокод можно <br> использовать</label>
                         <div class="create__input__container">
                             <div class="create__input__select mr-2">
-                                <select>
+                                <select class="create__input__element">
                                     <option value="">неограниченно</option>
                                 </select>
                             </div>
-                            <input type="number" value="5" class="mr-2">
+                            <input 
+                                type="number" 
+                                class="create__input__element mr-2">
                             раз
                         </div>
                     </div>
@@ -57,6 +70,7 @@ export default {
     data(){
         return{
             a: '',
+            date: '',
         }
     }
 }

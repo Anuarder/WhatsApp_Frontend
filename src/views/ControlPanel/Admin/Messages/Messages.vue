@@ -55,7 +55,7 @@
                                 <b>{{item.date}}</b>
                             </div>
                             <div class="messages__item__action">
-                                <i class="material-icons">more_horiz</i>
+                                <v-actions></v-actions>
                             </div>
                         </div>
                         <div class="messages__item__data">

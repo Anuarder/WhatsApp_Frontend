@@ -12,51 +12,57 @@
                     <div class="create__input">
                         <label>Имя</label>
                         <div class="create__input__container">
-                            <input type="text" v-model="a">
+                            <input 
+                                type="text" 
+                                class="create__input__element" 
+                                v-model="a">
                         </div>
                     </div>
                     <div class="create__input">
                         <label>Фамилия</label>
                         <div class="create__input__container">
-                            <input type="text" v-model="a">
+                            <input 
+                                type="text" 
+                                class="create__input__element" 
+                                v-model="a">
                         </div>
                     </div>
                     <div class="create__input">
                         <label>Email</label>
                         <div class="create__input__container">
-                            <input type="text" v-model="a">
+                            <input 
+                                type="text" 
+                                class="create__input__element" 
+                                v-model="a">
                         </div>
                     </div>
                     <div class="create__input">
                         <label>Ваш номер</label>
                         <div class="create__input__container">
-                            <input type="text" v-model="a">
+                            <input 
+                                type="text" 
+                                class="create__input__element" 
+                                v-model="a">
                         </div>
                     </div>
                     <div class="create__input">
                         <label>Ваш пароль</label>
                         <div class="create__input__container">
-                            <input type="text" v-model="a">
+                            <input 
+                                type="text" 
+                                class="create__input__element" 
+                                v-model="a">
                         </div>
                     </div>
                     <div class="create__input">
                         <label>Подписка</label>
                         <div class="create__input__container">
-                            <div class="create__input__select mr-2">
-                                <select>
-                                    <option value="">день</option>
-                                </select>
-                            </div>
-                            <div class="create__input__select mr-2">
-                                <select class="mr-2">
-                                    <option value="">месяц</option>
-                                </select>
-                            </div>
-                            <div class="create__input__select">
-                                <select>
-                                    <option value="">год</option>
-                                </select>
-                            </div>
+                            <datetime 
+                                zone="UTC+6" 
+                                input-class="input-date" 
+                                placeholder="Выберите дату"
+                                v-model="date">
+                            </datetime> 
                         </div>
                     </div>
                     <div class="create__buttons">
@@ -76,7 +82,8 @@
 export default {
     data(){
         return{
-            a: ''
+            a: '',
+            date: '',
         }
     }
 }

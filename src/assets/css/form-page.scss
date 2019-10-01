@@ -88,9 +88,15 @@
         label{
             width: 200px;
         }
-        input, 
-        span, 
-        select{
+        .vdatetime{
+            width: 100%;
+            .input-date{
+                border-radius: 1rem;
+                height: 60px;
+                padding: 0 2rem;
+            }
+        }
+        &__element{
             @include input_reset;
             @include flex_vertical_center;
             background-color: #fff;

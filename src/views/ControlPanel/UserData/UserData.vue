@@ -6,36 +6,73 @@
                     <div class="create__input">
                         <label>Имя</label>
                         <div class="create__input__container">
-                            <input type="text" v-model="first_name" v-if="isEdit">
-                            <span v-else>{{first_name}}</span>
+                            <input
+                                v-if="isEdit"
+                                type="text"  
+                                class="create__input__element" 
+                                v-model="first_name">
+                            <span 
+                                v-else 
+                                class="create__input__element">
+                                {{first_name}}
+                            </span>
                         </div>
                     </div>
                     <div class="create__input">
                         <label>Фамилия</label>
                         <div class="create__input__container">
-                            <input type="text" v-model="last_name" v-if="isEdit">
-                            <span v-else>{{last_name}}</span>
+                            <input 
+                                v-if="isEdit" 
+                                type="text"  
+                                class="create__input__element" 
+                                v-model="last_name">
+                            <span 
+                                v-else 
+                                class="create__input__element">
+                                {{last_name}}
+                            </span>
                         </div>
                     </div>
                     <div class="create__input">
                         <label>Email</label>
                         <div class="create__input__container">
-                            <input type="text" v-model="email" v-if="isEdit">
-                            <span v-else>{{email}}</span>
+                            <input 
+                                v-if="isEdit" 
+                                type="text"  
+                                class="create__input__element" 
+                                v-model="email">
+                            <span 
+                                v-else 
+                                class="create__input__element">
+                                {{email}}
+                            </span>
                         </div>
                     </div>
                     <div class="create__input">
                         <label>Ваш номер</label>
                         <div class="create__input__container">
-                            <input type="text" v-model="phone" v-if="isEdit">
-                            <span v-else>{{phone}}</span>
+                            <input 
+                                v-if="isEdit" 
+                                type="text"  
+                                class="create__input__element" 
+                                v-model="phone" >
+                            <span 
+                                v-else 
+                                class="create__input__element">
+                                {{phone}}
+                            </span>
                         </div>
                     </div>
-                    <div class="create__buttons" v-if="isEdit">
-                        <button class="w-button" @click="isEdit = false">
+                    <div 
+                        v-if="isEdit" 
+                        class="create__buttons">
+                        <button 
+                            class="w-button" 
+                            @click="isEdit = false">
                             Сохранить
                         </button>
-                        <button class="w-button w-button__outline">
+                        <button 
+                            class="w-button w-button__outline">
                             Отмена
                         </button>
                     </div>

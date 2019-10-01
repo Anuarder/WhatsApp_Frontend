@@ -9,8 +9,18 @@
     }
     &__container{
         margin-top: 2rem;
-        height: 550px;
+        height: 650px;
         overflow: auto;
+        &::-webkit-scrollbar{
+            width: 3px;
+        }
+        &::-webkit-scrollbar-thumb{
+            background-color: #585858;
+            width: 3px;
+        }
+        &::-webkit-scrollbar-track{
+            background-color: #dbdbdb;
+        }
     }
     &__item{
         margin-top: 2rem;

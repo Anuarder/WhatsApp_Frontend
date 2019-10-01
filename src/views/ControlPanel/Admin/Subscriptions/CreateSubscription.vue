@@ -12,19 +12,28 @@
                     <div class="create__input">
                         <label>Название подписки</label>
                         <div class="create__input__container">
-                            <input type="text" v-model="a">
+                            <input 
+                                type="text" 
+                                class="create__input__element" 
+                                v-model="a">
                         </div>
                     </div>
                     <div class="create__input">
                         <label>Цена</label>
                         <div class="create__input__container">
-                            <input type="text" v-model="a">
+                            <input 
+                                type="text" 
+                                class="create__input__element" 
+                                v-model="a">
                         </div>
                     </div>
                     <div class="create__input">
                         <label>Скидочная цена</label>
                         <div class="create__input__container">
-                            <input type="text" v-model="a">
+                            <input 
+                                type="text" 
+                                class="create__input__element" 
+                                v-model="a">
                         </div>
                     </div>
                     <div class="create__buttons">
@@ -44,7 +53,8 @@
 export default {
     data(){
         return{
-            a: ''
+            a: '',
+            date: '',
         }
     }
 }
