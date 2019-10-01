@@ -14,33 +14,68 @@
                 <editor-menu-bar 
                     :editor="editor" 
                     v-slot="{ commands, isActive }">
-                    <div class="menu-bar">
+                    <div class="messages__text__menu-bar">
                         <button 
                             :class="{ 'is-active': isActive.bold() }" 
-                            class="menu-item"
+                            class="messages__text__menu-item"
                             @click="commands.bold">
-                            Bold
+                            <b>Ж</b>
                         </button>
                         <button 
                             :class="{ 'is-active': isActive.italic() }" 
-                            class="menu-item"
+                            class="messages__text__menu-item"
                             @click="commands.italic">
-                            Italic
+                            <em>K</em>
                         </button>
                         <button 
                             :class="{ 'is-active': isActive.strike() }" 
-                            class="menu-item"
+                            class="messages__text__menu-item"
                             @click="commands.strike">
-                            Strike
+                            <s>abc</s>
                         </button>
+                        <button 
+                            class="messages__text__menu-item">
+                            <img src="@/assets/images/file.svg" alt="file">
+                        </button>
+                        <div>
+                            <emoji-picker @emoji="insert">
+                                <div 
+                                    slot="emoji-invoker" 
+                                    slot-scope="{ events: { click: clickEvent } }" 
+                                    @click.stop="clickEvent">
+                                    <button type="button" class="messages__text__menu-item">
+                                        <img src="@/assets/images/emoji.svg" alt="emoji">
+                                    </button>
+                                </div>
+                                <div slot="emoji-picker" slot-scope="{ emojis, insert }">
+                                    <div>
+                                        <div 
+                                            v-for="(emojiGroup, category) in emojis" 
+                                            :key="category">
+                                            <h5>{{ category }}</h5>
+                                            <div>
+                                                <span
+                                                    v-for="(emoji, emojiName) in emojiGroup"
+                                                    :key="emojiName"
+                                                    @click="insert(emoji)"
+                                                    :title="emojiName">
+                                                    {{ emoji }}
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </emoji-picker>
+                        </div>
                     </div>
                 </editor-menu-bar>
                 <editor-content 
                     :editor="editor" 
-                    class="messages__editor"/>
+                    class="messages__text__editor"/>
                 <div class="messages__text__actions">
-                    <button @click="sendMessage">Отправить</button>
-                    <button @click="setMessage">Создать</button>
+                    <button @click="sendMessage" class="w-button">
+                        Отправить
+                    </button>
                 </div>
             </div>
             <div class="messages__container">
@@ -70,10 +105,13 @@
 <script>
 import { Editor, EditorContent, EditorMenuBar  } from 'tiptap'
 import {  Bold, Italic, Strike } from 'tiptap-extensions'
+import EmojiPicker from 'vue-emoji-picker'
+
 export default {
     components: {
         EditorContent,
         EditorMenuBar,
+        EmojiPicker,
     },
     data(){
         return{
@@ -131,7 +169,7 @@ export default {
     },
     mounted(){
         this.editor = new Editor({
-            content: '',
+            content: 'Напишите сообщение',
             extensions: [
                 new Bold(),
                 new Italic(),
@@ -148,6 +186,9 @@ export default {
     methods: {
         sendMessage(){
             console.log(this.message);
+        },
+        insert(emoji) {
+            this.editor.setContent(this.message += emoji);
         },
         setMessage(){
             this.editor.setContent('<p>This is <strong>some</strong> inserted text. 👋</p>')

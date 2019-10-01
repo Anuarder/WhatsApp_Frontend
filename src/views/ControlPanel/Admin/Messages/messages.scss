@@ -1,8 +1,43 @@
 @import "@/assets/css/variables.scss";
 
 .messages{
-    &__editor{
-        background-color: #fff;
+    &__date{
+        max-width: 210px;
+        position: relative;
+        font-size: 1.1rem;
+        &::before{
+            font-family: 'Material Icons';
+            content: "calendar_today";
+            position: absolute;
+            right: .6rem;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+    &__text{
+        &__menu-bar{
+            margin-top: 1rem;
+            @include flex_vertical_center;
+        }
+        &__menu-item{
+            @include input_reset;
+            @include flex_vertical_center;
+            margin-left: 1rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+        &__editor{
+            padding: 1rem;
+            border-radius: .6rem;
+            margin-top: 1rem;
+            background-color: #fff;
+            // height: 100px;
+            max-height: 100px;
+            overflow: auto;
+        }
+        &__actions{
+            margin-top: 1rem;
+        }
     }
     &__content{
         height: 100vh;
