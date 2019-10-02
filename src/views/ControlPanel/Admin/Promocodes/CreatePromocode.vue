@@ -41,11 +41,6 @@
                     <div class="create__input">
                         <label>Промокод можно <br> использовать</label>
                         <div class="create__input__container">
-                            <div class="create__input__select mr-2">
-                                <select class="create__input__element">
-                                    <option value="">неограниченно</option>
-                                </select>
-                            </div>
                             <input 
                                 type="number" 
                                 class="create__input__element mr-2">

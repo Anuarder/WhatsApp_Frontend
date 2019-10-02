@@ -1,8 +1,12 @@
 <template>
     <div class="control-panel">
-        <u-sidebar></u-sidebar>
+        <div class="control-panel__sidebar">
+            <u-sidebar></u-sidebar>
+        </div>
         <div class="control-panel__container">
-            <u-toolbar></u-toolbar>
+            <div class="control-panel__toolbar">
+                <u-toolbar></u-toolbar>
+            </div>
             <div class="control-panel__content">
                 <router-view></router-view>
             </div>
