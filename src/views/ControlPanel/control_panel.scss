@@ -3,7 +3,6 @@
 .control-panel{
     display: flex;
     min-height: 100vh;
-    // max-height: 100vh;
     background-color: #f1f1f1;
     overflow: hidden;
     &__sidebar{
@@ -16,5 +15,25 @@
     &__content{
         padding: 0 2rem;
         padding-bottom: 1rem;
+    }
+}
+
+@media screen and (max-width: 1200px){
+    .control-panel{
+        &__container{
+            margin-left: calc(200px + 2rem);
+        }
+        &__content{
+            padding: 0 2rem;
+            padding-bottom: 1rem;
+        }
+    }
+}
+
+@media screen and (max-width: 1000px){
+    .control-panel{
+        &__container{
+            margin-left: calc(180px + 2rem);
+        }
     }
 }

@@ -49,3 +49,47 @@
         }
     }
 }
+
+@media screen and (max-width: 1200px){
+    .a-table{
+        &__header, &__body__content{
+            margin-left: 2rem;
+            font-size: 1rem;
+        }
+        &__body{
+            margin-top: 1.5rem;
+            &__content{
+                height: 70px;
+            }
+            &__actions{
+                padding-right: 2rem;
+            }
+        }
+        &__empty{
+            margin: 0 2.5rem;
+            margin-top: 5rem;
+            h1{
+                font-size: 1.1rem;
+            }
+            button{
+                margin-top: 2rem;
+            }
+        }
+        &__button{
+            @include flex_horizontal_end;
+            margin-bottom: 3rem;
+            span{
+                margin-right: 1rem;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 1000px){
+    .a-table{
+        &__header, &__body__content{
+            font-size: .9rem;
+        }
+    }
+}

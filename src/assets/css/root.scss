@@ -19,9 +19,7 @@
     padding-left: 1rem;
     padding-right: 2rem;
 }
-html{
-    height: 100%;
-}
+
 body{
     font-family: 'Roboto', sans-serif;
 }
@@ -70,6 +68,11 @@ label {
     }
 }
 
+@media screen and (max-width: 1200px){
+    .w-button{
+        min-width: 185px;
+    }
+}
 
 .fade-enter-active, 
 .fade-leave-active {
@@ -79,4 +82,18 @@ label {
 .fade-enter,
 .fade-leave-active  {
     opacity: 0;
+}
+
+.app-landscape{
+    height: 100vh;
+    @include flex_center;
+    font-family: 'Comfortaa', sans-serif;
+    font-size: 2rem;
+    i{
+        font-size: 2.5rem;
+        margin-right: 1rem;
+    }
+}
+.app-landscape{
+    display: none;
 }

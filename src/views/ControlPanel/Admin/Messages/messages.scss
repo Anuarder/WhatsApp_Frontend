@@ -94,9 +94,6 @@
             }
         }
     }
-    &__content{
-        // height: calc(100vh - 100px);
-    }
     &__container{
         margin-top: 2rem;
         // height: 70%;
@@ -114,7 +111,6 @@
     }
     &__item{
         margin-top: 2rem;
-        
         &:first-child{
             margin-top: 0;
         }
@@ -142,6 +138,22 @@
             max-height: 200px;
             overflow: auto;
             line-height: 170%;
+        }
+    }
+}
+
+@media screen and (max-width: 1200px){
+    .messages{
+        &__date{
+            font-size: 1rem;
+        }
+        &__item{
+            font-size: 1rem;
+        }
+        &__text{
+            &__menu-item{
+                font-size: 1rem;
+            }
         }
     }
 }

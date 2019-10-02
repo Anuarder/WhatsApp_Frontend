@@ -35,3 +35,22 @@
         }
     }
 }
+
+
+@media screen and (max-width: 1200px){
+    .sidebar{
+        width: 230px;
+        &__link{
+            width: 180px;
+        }
+    }
+}
+
+@media screen and (max-width: 1000px){
+    .sidebar{
+        width: 210px;
+        &__link{
+            width: 170px;
+        }
+    }
+}

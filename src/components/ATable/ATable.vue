@@ -29,7 +29,7 @@
                     :key="item.id">
                     <div 
                         class="a-table__body__content" 
-                        :style="`grid-template-columns: repeat(${length}, 1fr);`">
+                        :style="`grid-template-columns: repeat(${length}, 1fr)`">
                         <div 
                             class="a-table__body__fields"
                             v-for="key in headers"
