@@ -49,6 +49,11 @@
 @media screen and (max-width: 1000px){
     .sidebar{
         width: 210px;
+        &__links{
+            margin-top: 2rem;
+            color: #fff;
+            font-size: 1rem;
+        }
         &__link{
             width: 170px;
         }
