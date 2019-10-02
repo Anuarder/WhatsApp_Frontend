@@ -1,10 +1,14 @@
 <template>
     <div class="actions">
-        <div class="actions__button" @click="actions = !actions" v-click-outside="hide">
-           <!-- <i class="material-icons">more_horiz</i> -->
-           <img src="../../assets/images/actions.svg" alt="">
+        <div 
+            class="actions__button" 
+            @click.stop="actions = !actions" >
+           <img src="@/assets/images/actions.svg" alt="">
         </div>
-        <div class="actions__items" v-show="actions">
+        <div
+            class="actions__items" 
+            v-if="actions" 
+            v-click-outside="config">
             <div class="actions__item">
                 Редактировать
             </div>
@@ -15,27 +19,28 @@
     </div>
 </template>
 <script>
-import ClickOutside from 'vue-click-outside'
-
+import vClickOutside from 'v-click-outside'
 export default {
     props: {
 
     },
     data(){
         return{
-            actions: false
-        }
-    },
-    methods: {
-        hide(){
-            if(this.actions){
-                this.actions = false;
-            }
+            config: {
+                handler: this.hide,
+                events: ["dblclick", "click"]
+            },
+            actions: false,
         }
     },
     directives: {
-        ClickOutside
-    }
+        clickOutside: vClickOutside.directive
+    },
+    methods: {
+        hide(){
+            this.actions = false;
+        }
+    },
 }
 </script>
 <style 

@@ -16,14 +16,16 @@
 @media screen and (max-width: 1200px){
     .toolbar{
         height: 90px;
-        padding: 0 2rem;
-        @include flex_horizontal_between;
-        &__button{
-            visibility: hidden;
-        }
         &__actions{
-            font-weight: 700;
             font-size: 1rem;
+        }
+    }
+}
+
+@media screen and (max-width: 900px){
+    .toolbar{
+        &__button{
+            visibility: visible;
         }
     }
 }
