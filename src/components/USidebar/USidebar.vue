@@ -5,14 +5,14 @@
         </div>
         <div class="sidebar__container">
             <div class="sidebar__links">
-                <router-link  
-                    :to="item.path"
+                <div  
                     class="sidebar__link"
                     active-class="sidebar__link__active"
                     v-for="(item, i) in links"
+                    @click="go(item.path)"
                     :key="i">
                     {{item.name}}
-                </router-link>
+                </div>
             </div>
         </div>
     </div>
@@ -61,8 +61,13 @@ export default {
         links(){
             return this[`${this.user.role}_links`]
         }
+    },
+    methods: {
+        go(path){
+            this.$store.commit('setSidebar', false);
+            this.$router.push(path);
+        }
     }
-    
 }
 </script>
 <style 

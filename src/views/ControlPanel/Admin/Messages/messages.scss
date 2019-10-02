@@ -21,8 +21,12 @@
         &__edit-bar{
             @include flex_vertical_center;
             margin-right: 1rem;
+            .is-active{
+                color: #FF4A43
+            }
         }
         &__menu-item{
+            cursor: pointer;
             @include input_reset;
             @include flex_vertical_center;
             margin-left: 1rem;
@@ -91,6 +95,8 @@
             @include flex_horizontal_end;
             span{
                 margin-right: 1rem;
+                font-weight: 600;
+                color: #FF4A43;
             }
         }
     }
@@ -126,9 +132,6 @@
         }
         &__action{
             display: flex;
-            i{
-                font-size: 2.5rem;
-            }
         }
         &__data{
             margin-top: 1rem;
@@ -153,6 +156,59 @@
         &__text{
             &__menu-item{
                 font-size: 1rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 600px){
+    .messages{
+        &__text{
+            &__menu-bar{
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            &__actions{
+                span{
+                    margin-right: 0;
+                    margin-bottom: 1rem;
+                }
+                flex-direction: column;
+                align-items: flex-end;
+                .w-button{
+                    min-width: 200px;
+                }
+            }
+            &__edit-bar{
+                margin-top: 1rem;
+            }
+            &__emoji{
+                .emoji-picker{
+                    left: -8rem;
+                }
+            }
+        }
+        &__item{
+            &__date{
+                font-size: .9rem;
+                line-height: 150%;
+                @include flex_column;
+                span{
+                    margin-right: 1rem;
+                }
+            }
+            &__actions{
+                @include flex_horizontal_between;
+                padding: 0 1rem;
+            }
+            &__data{
+                margin-top: 1rem;
+                background-color: #fff;
+                padding: 1rem;
+                border-radius: 1rem;
+                max-height: 200px;
+                overflow: auto;
+                line-height: 170%;
             }
         }
     }

@@ -2,7 +2,7 @@
     <div class="create-promocode">
         <div class="create__content">
             <div class="create__form">
-                <div class="create__back">
+                <div class="create__back" @click="$router.back()">
                     <i class="material-icons">arrow_back_ios</i>
                     <u>
                         СОЗДАТЬ ПРОМОКОД
