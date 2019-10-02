@@ -27,7 +27,7 @@ export default {
                     value: 'percent'
                 },
                 {
-                    title: 'Кол-во <br> использования',
+                    title: 'Кол-во использования',
                     value: 'use_amount'
                 },
                 {
@@ -41,7 +41,13 @@ export default {
                     percent: '150',
                     use_amount: '5',
                     date: '25.10.19 12:00:05'
-                }
+                },
+                {
+                    name: 'Подписка',
+                    percent: '150',
+                    use_amount: '5',
+                    date: '25.10.19 12:00:05'
+                },
             ]
         }
     }

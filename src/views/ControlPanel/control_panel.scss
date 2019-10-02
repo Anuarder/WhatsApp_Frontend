@@ -19,14 +19,6 @@
     }
 }
 
-.outside-bg{
-    display: none;
-    position: fixed;
-    // background-color: rgba(0, 0, 0, 0.335);
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-}
 
 @media screen and (max-width: 1200px){
     .control-panel{
@@ -49,9 +41,6 @@
 }
 
 @media screen and (max-width: 900px){
-    .outside-bg{
-        display: block;
-    }
     .control-panel{
         &__sidebar{
             left: -100%;
@@ -59,6 +48,15 @@
         }
         &__container{
             margin-left: 0;
+        }
+    }
+}
+
+@media screen and (max-width: 600px){
+    .control-panel{
+        &__content{
+            padding: 0 1rem;
+            padding-bottom: 2rem;
         }
     }
 }

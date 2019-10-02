@@ -29,3 +29,10 @@
         }
     }
 }
+
+@media screen and (max-width: 600px){
+    .toolbar{
+        height: 80px;
+        padding: 0 1rem;
+    }
+}

@@ -174,7 +174,8 @@
                     margin-bottom: 1rem;
                 }
                 flex-direction: column;
-                align-items: flex-end;
+                align-items: flex-start;
+                margin-top: 0;
                 .w-button{
                     min-width: 200px;
                 }

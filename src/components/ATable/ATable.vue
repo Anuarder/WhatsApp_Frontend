@@ -34,8 +34,9 @@
                             class="a-table__body__fields"
                             v-for="key in headers"
                             :key="key.value">
-                            <span v-if="item[key.value]">
-                                {{item[key.value]}}
+                            <span v-if="item[key.value]" class="only-mobile__container">
+                                <span v-html="key.title" class="only-mobile"></span>
+                                <span class="only-mobile__title">{{item[key.value]}}</span>
                             </span>
                         </div>
                         <div 
