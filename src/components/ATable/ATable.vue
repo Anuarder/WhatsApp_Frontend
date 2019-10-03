@@ -37,7 +37,7 @@
                 <div 
                     class="a-table__body__item"
                     v-for="item in data"
-                    :key="item.id">
+                    :key="item._id">
                     <div 
                         class="a-table__body__content" 
                         :style="`grid-template-columns: repeat(${length}, 1fr)`">
@@ -53,7 +53,10 @@
                         <div 
                             class="a-table__body__actions" 
                             v-if="actions">
-                            <v-actions></v-actions>
+                            <v-actions 
+                                @edit="_edit(item._id)" 
+                                @delete="_delete(item._id)">
+                            </v-actions>
                         </div>
                     </div>
                 </div>
@@ -78,6 +81,14 @@ export default {
             }else{
                 return this.headers.length;
             }
+        }
+    },
+    methods: {
+        _edit(id){
+            this.$emit('edit', id)
+        },
+        _delete(id){
+            this.$emit('delete', id)
         }
     }
 }

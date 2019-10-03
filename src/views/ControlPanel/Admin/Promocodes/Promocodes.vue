@@ -6,6 +6,8 @@
             empty="ПРОМОКОДОВ"
             create="Создать промокод"
             to="/user/admin-create-promocode"
+            @edit="_edit"
+            @delete="_delete"
             actions>
         </a-table>
     </div>
@@ -38,18 +40,28 @@ export default {
             ],
             promocodes: [
                 {
+                    _id: 1,
                     name: 'Подписка',
                     percent: '150',
                     use_amount: '5',
                     date: '25.10.19 12:00:05'
                 },
                 {
+                    _id: 2,
                     name: 'Подписка',
                     percent: '150',
                     use_amount: '5',
                     date: '25.10.19 12:00:05'
                 },
             ]
+        }
+    },
+    methods: {
+        _edit(id){
+            console.log(id)
+        },
+        _delete(id){
+            console.log(id)
         }
     }
 }

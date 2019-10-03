@@ -1,13 +1,14 @@
 import Vue from 'vue'
+import store from "./store"
 import Router from 'vue-router'
 import Promo from './views/Promo/Promo.vue'
-import Login from './views/Login/Login.vue'
-import Register from './views/Register/Register.vue'
-import PasswordReset from './views/PasswordReset/PasswordReset.vue'
+import Login from './views/Auth/Login/Login.vue'
+import Register from './views/Auth/Register/Register.vue'
+import PasswordReset from './views/Auth/PasswordReset/PasswordReset.vue'
 import ControlPanel from './views/ControlPanel/ControlPanel.vue'
-import Subscriptions from './views/ControlPanel/Subscriptions/Subscriptions.vue'
-import UserData from './views/ControlPanel/UserData/UserData.vue'
-import UserPasswordReset from './views/ControlPanel/PasswordReset/PasswordReset.vue'
+import UserSubscriptions from './views/ControlPanel/User/Subscriptions/Subscriptions.vue'
+import UserData from './views/ControlPanel/User/UserData/UserData.vue'
+import UserPasswordReset from './views/ControlPanel/User/PasswordReset/PasswordReset.vue'
 import AdminSubscriptions from './views/ControlPanel/Admin/Subscriptions/Subscriptions.vue'
 import AdminCreateSubscription from './views/ControlPanel/Admin/Subscriptions/CreateSubscription.vue'
 import AdminPromocodes from './views/ControlPanel/Admin/Promocodes/Promocodes.vue'
@@ -18,14 +19,17 @@ import AdminMessages from './views/ControlPanel/Admin/Messages/Messages.vue'
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
     mode: 'history',
     base: process.env.BASE_URL,
     routes: [
         {
             path: '/',
             name: 'promo',
-            component: Promo
+            component: Promo,
+            meta: {
+                auth: false
+            }
         },
         {
             path: '/login',
@@ -51,7 +55,7 @@ export default new Router({
                 {
                     path: '/user/subscriptions',
                     name: 'user_subscriptions',
-                    component: Subscriptions
+                    component: UserSubscriptions
                 },
                 {
                     path: '/user/data',
@@ -102,3 +106,10 @@ export default new Router({
         },
     ]
 })
+
+router.beforeEach((to, from, next) => {
+    console.log(store.getters.GET_TOKEN)
+    next();
+});
+
+export default router;

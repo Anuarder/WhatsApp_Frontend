@@ -7,6 +7,8 @@
                 empty="ПОЛЬЗОВАТЕЛЕЙ"
                 create="Добавить пользователя"
                 to="/user/admin-create-user"
+                @edit="_edit"
+                @delete="_delete"
                 actions>
             </a-table>
         </div>
@@ -36,16 +38,26 @@ export default {
             ],
             users: [
                 {
+                    _id: 1,
                     fullname: 'Тажибаев Арман',
                     phone: '+7 777 366 66 66',
                     subscriptions: 'до 25.10.19 12:00:05'
                 },
                 {
+                    _id: 2,
                     fullname: 'Тажибаев Арман',
                     phone: '+7 777 366 66 66',
                     subscriptions: 'до 25.10.19 12:00:05'
                 }
             ]
+        }
+    },
+    methods: {
+        _edit(id){
+            console.log(id)
+        },
+        _delete(id){
+            console.log(id)
         }
     }
 }

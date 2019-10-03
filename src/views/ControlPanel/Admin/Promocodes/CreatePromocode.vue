@@ -15,7 +15,7 @@
                             <input 
                                 type="text" 
                                 class="create__input__element"
-                                v-model="a">
+                                v-model="name">
                         </div>
                     </div>
                     <div class="create__input">
@@ -35,7 +35,7 @@
                             <input 
                                 type="text" 
                                 class="create__input__element"
-                                v-model="a"  >
+                                v-model="percent"  >
                         </div>
                     </div>
                     <div class="create__input">
@@ -43,7 +43,8 @@
                         <div class="create__input__container">
                             <input 
                                 type="number" 
-                                class="create__input__element mr-2">
+                                class="create__input__element mr-2"
+                                v-model="quantity">
                             раз
                         </div>
                     </div>
@@ -64,8 +65,10 @@
 export default {
     data(){
         return{
-            a: '',
+            name: '',
             date: '',
+            percent: '',
+            quantity: ''
         }
     }
 }

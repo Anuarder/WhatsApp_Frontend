@@ -9,10 +9,10 @@
             class="actions__items" 
             v-if="actions" 
             v-click-outside="config">
-            <div class="actions__item">
+            <div class="actions__item" @click="_edit">
                 Редактировать
             </div>
-            <div class="actions__item red">
+            <div class="actions__item red" @click="_delete">
                 Удалить
             </div>
         </div>
@@ -39,7 +39,13 @@ export default {
     methods: {
         hide(){
             this.actions = false;
-        }
+        },
+        _edit(){
+            this.$emit('edit');
+        },
+        _delete(){
+            this.$emit('delete');
+        },
     },
 }
 </script>

@@ -13,13 +13,13 @@
                     :to="item.path"
                     :key="i">
                     {{item.name}}
-                </router-link  >
+                </router-link>
             </div>
         </div>
     </div>
 </template>
 <script>
-import { mapState } from "vuex"
+import { mapGetters } from "vuex"
 export default {
     data(){
         return{
@@ -58,9 +58,9 @@ export default {
         }
     },
     computed: {
-        ...mapState(['user']),
+        ...mapGetters(['GET_USER']),
         links(){
-            return this[`${this.user.role}_links`]
+            return this[`${this.GET_USER.role}_links`]
         }
     },
     methods: {

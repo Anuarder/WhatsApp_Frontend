@@ -20,7 +20,7 @@
 import UToolbar from "@/components/UToolbar/UToolbar"
 import USidebar from "@/components/USidebar/USidebar"
 import vClickOutside from 'v-click-outside'
-import { mapState } from "vuex"
+import { mapGetters } from "vuex"
 export default {
     components: {
         UToolbar,
@@ -35,13 +35,15 @@ export default {
         }
     },
     computed: {
-        ...mapState(['sidebar'])
+        ...mapGetters(['sidebar'])
     },
     directives: {
         clickOutside: vClickOutside.directive
     },
     methods: {
         hide(){
+            console.log('hide')
+            console.log(this.sidebar)
             this.$store.commit('setSidebar', false);
         }
     },

@@ -3,6 +3,8 @@
         <a-table 
             :headers="headers" 
             :data="subscriptions"
+            @edit="_edit"
+            @delete="_delete"
             actions>
         </a-table>
     </div>
@@ -31,11 +33,20 @@ export default {
             ],
             subscriptions: [
                 {
+                    _id: 1,
                     name: 'Подписка',
                     price: '150',
                     discount_price: '150'
                 }
             ]
+        }
+    },
+    methods: {
+        _edit(id){
+            console.log(id)
+        },
+        _delete(id){
+            console.log(id)
         }
     }
 }
