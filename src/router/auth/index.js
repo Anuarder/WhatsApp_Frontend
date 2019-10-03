@@ -1,8 +1,8 @@
 import Login from '@/views/Auth/Login/Login.vue'
 import Register from '@/views/Auth/Register/Register.vue'
-import PasswordReset from '@/views/Auth/PasswordReset/PasswordReset.vue'
-import CheckPasswordCode from '@/views/Auth/CheckPasswordCode/CheckPasswordCode.vue'
-import SetNewPassword from '@/views/Auth/SetNewPassword/SetNewPassword.vue'
+import PasswordReset from '@/views/Auth/Password/PasswordReset/PasswordReset.vue'
+import CheckPasswordCode from '@/views/Auth/Password/CheckPasswordCode/CheckPasswordCode.vue'
+import SetNewPassword from '@/views/Auth/Password/SetNewPassword/SetNewPassword.vue'
 
 export default [
     {
