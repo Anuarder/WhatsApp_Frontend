@@ -15,10 +15,8 @@
                                 v-model="email">
                         </div>
                         <div class="password-reset__link form-page__link">
-                            <router-link to="/password_reset">
-                                Отправьте нам свой e-mail и мы вышлем <br>
-                                вам код
-                            </router-link>
+                            Отправьте нам свой e-mail и мы вышлем <br>
+                            вам код
                         </div>
                         <div class="password-reset__button form-page__button">
                             <button type="submit" class="w-button">
