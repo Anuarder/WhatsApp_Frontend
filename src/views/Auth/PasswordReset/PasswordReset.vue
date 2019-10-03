@@ -6,7 +6,7 @@
                 <div class="password-reset__title form-page__title">
                     ВОССТАНОВЛЕНИЕ ПАРОЛЯ
                 </div>
-                <div class="password-reset__form form-page__from">
+                <div class="password-reset__form form-page__form">
                     <form @submit.prevent="password_reset">
                         <div class="password-reset__input form-page__input">
                             <input 
