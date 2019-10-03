@@ -1,6 +1,17 @@
 <template>
     <div class="a-table">
-        <div class="a-table__content">
+        <div 
+            class="a-table__empty" 
+            v-if="data.length === 0">
+            <h1>У ВАС НЕТ {{empty}}</h1>
+            <router-link 
+                class="w-button" 
+                tag="button" 
+                :to="to">
+                {{ create }}
+            </router-link>
+        </div>
+        <div class="a-table__content" v-else>
             <div 
                 class="a-table__button" 
                 v-if="create">
@@ -57,7 +68,8 @@ export default {
         data: Array,
         actions: Boolean,
         create: String,
-        to: String
+        to: String,
+        empty: String,
     },
     computed: {
         length(){

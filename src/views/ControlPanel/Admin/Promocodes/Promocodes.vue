@@ -3,6 +3,7 @@
         <a-table 
             :headers="headers" 
             :data="promocodes"
+            empty="ПРОМОКОДОВ"
             create="Создать промокод"
             to="/user/admin-create-promocode"
             actions>

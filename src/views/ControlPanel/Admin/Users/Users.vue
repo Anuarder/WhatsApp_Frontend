@@ -4,6 +4,7 @@
             <a-table 
                 :headers="headers" 
                 :data="users"
+                empty="ПОЛЬЗОВАТЕЛЕЙ"
                 create="Добавить пользователя"
                 to="/user/admin-create-user"
                 actions>
