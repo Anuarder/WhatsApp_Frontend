@@ -55,7 +55,7 @@
             }
         },
         methods: {
-            login(){
+            login(){ 
                 console.log('login')
             }
         }

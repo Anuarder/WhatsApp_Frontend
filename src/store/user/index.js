@@ -15,15 +15,24 @@ const getters = {
     },
     GET_USER(state){
         return state.user;
+    },
+    GET_LOADING(state){
+        return state.loading;
+    },
+    GET_LOGIN_ERRORS(state){
+        return state.login_errors;
     }
 }
 
 const mutations = {
     SET_USER(state, user){
-        state.user = user
+        state.user = user;
     },
     SET_LOADING(state, loading){
         state.loading = loading;
+    },
+    SET_TOKEN(state, token){
+        state.token = token;
     }
 }
 
@@ -32,12 +41,28 @@ const actions = {
         try{
             commit('SET_LOADING', true)
             const response = await AuthServices.login(payload);
-            if(response.data.status){
+            if(response.data.token){
                 commit('SET_USER', response.data.user);
+                commit('SET_TOKEN', response.data.token);
                 commit('SET_LOADING', false);
+                this.$router.push('/user');
             }else{
-                console.log('fuck')
                 commit('SET_LOADING', false);
+            }
+        }catch(err){
+            commit('SET_LOADING', false);
+            if(err.response.data){
+                commit('SET_LOAGIN_ERROR', err.response.data.errors);
+            }else{
+                commit('SET_LOAGIN_ERROR', 'Ошибка');
+            }
+        }
+    },
+    async REGISTER({ commit }, payload){
+        try{
+            const response = await AuthServices.register(payload);
+            if(response.status == 200){
+                commit('')
             }
         }catch(err){
             console.log(err);
