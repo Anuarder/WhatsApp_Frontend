@@ -42,8 +42,6 @@ export default {
     },
     methods: {
         hide(){
-            console.log('hide')
-            console.log(this.sidebar)
             this.$store.commit('setSidebar', false);
         }
     },

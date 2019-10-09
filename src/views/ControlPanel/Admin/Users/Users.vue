@@ -9,6 +9,8 @@
                 to="/user/admin-create-user"
                 @edit="_edit"
                 @delete="_delete"
+                isEdit
+                isDelete
                 actions>
             </a-table>
         </div>

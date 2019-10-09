@@ -8,6 +8,7 @@
             to="/user/admin-create-promocode"
             @edit="_edit"
             @delete="_delete"
+            isDelete
             actions>
         </a-table>
     </div>

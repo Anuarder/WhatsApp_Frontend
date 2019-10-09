@@ -111,14 +111,12 @@
         &__header{
             display: none;
         }
-        &__body__content{
-            margin-left: 0;
-            font-size: 1.1rem;
-            @include flex_column;
-            line-height: 200%;
-        }
         &__body{
             &__content{
+                margin-left: 0;
+                font-size: 1.1rem;
+                @include flex_column;
+                line-height: 200%;
                 position: relative;
                 height: 100%;
                 padding: 1rem;

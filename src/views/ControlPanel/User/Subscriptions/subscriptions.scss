@@ -37,3 +37,60 @@
         }
     }
 }
+.only-mobile{
+    display: none;
+}
+
+@media screen and (max-width: 700px){
+    .only-mobile{
+        display: block;
+        font-weight: 600;
+        button{
+            @include input-reset;
+            margin-top: 2rem;
+            background-color: #FF4A43;
+            color: #fff;
+            width: 150px;
+            height: 40px;
+            border-radius: 4px;
+        }
+    }
+    .only-desktop{
+        display: none;
+    }
+    .subscriptions{
+        &__header{
+            display: none;
+        }
+        &__body{
+            &__content{
+                position: relative;
+                margin-left: 0;
+                font-size: 1.1rem;
+                line-height: 200%;
+                height: 100%;
+                padding: 1rem;
+                @include flex_column;
+                align-items: flex-start;
+            }
+            &__item{
+                border-radius: 1rem;
+                background-color: #fff;
+            }
+        }
+        &__empty{
+            margin: 0;
+            text-align: center;
+            margin-top: 5rem;
+        }
+        &__button{
+            margin-bottom: 2rem;
+            span{
+                margin-right: 1rem;
+            }
+            .w-button{
+                width: 100%;
+            }
+        }
+    }
+}

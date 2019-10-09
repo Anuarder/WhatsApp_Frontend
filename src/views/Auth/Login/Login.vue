@@ -7,6 +7,9 @@
                     ВХОД
                 </div>
                 <div class="login__form form-page__form">
+                    <div class="form-page__error">
+                        {{error_message}}
+                    </div>
                     <form @submit.prevent="login">
                         <div class="login__input form-page__input">
                             <input 
@@ -27,7 +30,8 @@
                         </div>
                         <div class="login__button form-page__button">
                             <button type="submit" class="w-button">
-                                Войти
+                                <span v-if="isLoading">Загрузка...</span>
+                                <span v-else>Войти</span>
                             </button>
                         </div>
                         <div class="login__link form-page__link">
@@ -51,12 +55,29 @@
         data(){
             return{
                 email: '',
-                password: ''
+                password: '',
+                error_message: '',
+                isLoading: false
             }
         },
         methods: {
-            login(){ 
-                console.log('login')
+            async login(){
+                try{
+                    this.isLoading = true;
+                    const response = await this.$store.dispatch('LOGIN', {
+                        email: this.email,
+                        password: this.password
+                    });
+                    if(response.status){
+                        this.isLoading = false;
+                        this.$router.push('user')
+                    }else{
+                        throw response;
+                    }
+                }catch(err){
+                    this.isLoading = false;
+                    this.error_message = err.error;
+                }
             }
         }
     }

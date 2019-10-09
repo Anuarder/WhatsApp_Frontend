@@ -7,12 +7,12 @@
         </div>
         <div
             class="actions__items" 
-            v-if="actions" 
+            v-if="actions"
             v-click-outside="config">
-            <div class="actions__item" @click="_edit">
+            <div class="actions__item" @click="_edit" v-if="isEdit">
                 Редактировать
             </div>
-            <div class="actions__item red" @click="_delete">
+            <div class="actions__item red" @click="_delete" v-if="isDelete">
                 Удалить
             </div>
         </div>
@@ -22,7 +22,8 @@
 import vClickOutside from 'v-click-outside'
 export default {
     props: {
-
+        isEdit: Boolean,
+        isDelete: Boolean
     },
     data(){
         return{

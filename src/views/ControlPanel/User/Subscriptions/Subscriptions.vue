@@ -21,13 +21,28 @@
                         :key="item.id">
                         <div class="subscriptions__body__content">
                             <div class="subscriptions__body__name">
+                                <div class="only-mobile">Название</div> 
                                 {{item.name}}
                             </div>
                             <div class="subscriptions__body__date">
+                                <div class="only-mobile">Дата окончания</div> 
                                 {{item.date}}
                             </div>
                             <div class="subscriptions__body__actions">
-                                <span v-if="item.isEnd">Продлить</span>
+                                <router-link 
+                                    v-if="item.isEnd" 
+                                    to="/user/checkout-subscriptions" 
+                                    class="only-desktop">
+                                        Продлить
+                                    </router-link>
+                                <div class="only-mobile">
+                                    <router-link 
+                                        v-if="item.isEnd" 
+                                        to="/user/checkout-subscriptions" 
+                                        tag="button">
+                                        Продлить
+                                    </router-link>
+                                </div>
                             </div>
                         </div>
                     </div>

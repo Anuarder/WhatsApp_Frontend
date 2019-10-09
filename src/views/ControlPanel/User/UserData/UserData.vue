@@ -26,11 +26,11 @@
                                 type="text"  
                                 class="create__input__element" 
                                 v-model="last_name">
-                            <span 
+                            <div 
                                 v-else 
                                 class="create__input__element">
                                 {{last_name}}
-                            </span>
+                            </div>
                         </div>
                     </div>
                     <div class="create__input">

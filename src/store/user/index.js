@@ -1,11 +1,17 @@
 import AuthServices from "@/services/Auth"
+import httpError from "@/handlers/httpError"
 
 const state = {
     token: null,
-    login_errors: null,
-    login_loading: false,
+    new_user: {
+        first_name: "",
+        last_name: "",
+        email: "",
+        phone: "",
+        password: ""
+    },
     user: {
-        role: 'admin'
+        role: 'user'
     },
 }
 
@@ -16,20 +22,11 @@ const getters = {
     GET_USER(state){
         return state.user;
     },
-    GET_LOADING(state){
-        return state.loading;
-    },
-    GET_LOGIN_ERRORS(state){
-        return state.login_errors;
-    }
 }
 
 const mutations = {
     SET_USER(state, user){
         state.user = user;
-    },
-    SET_LOADING(state, loading){
-        state.loading = loading;
     },
     SET_TOKEN(state, token){
         state.token = token;
@@ -39,33 +36,33 @@ const mutations = {
 const actions = {
     async LOGIN({ commit }, payload){
         try{
-            commit('SET_LOADING', true)
             const response = await AuthServices.login(payload);
-            if(response.data.token){
-                commit('SET_USER', response.data.user);
-                commit('SET_TOKEN', response.data.token);
-                commit('SET_LOADING', false);
-                this.$router.push('/user');
+            console.log(response)
+            if(response.status === 200){
+                if(response.data.token){
+                    commit('SET_USER', response.data.user);
+                    commit('SET_TOKEN', response.data.token);
+                    return {
+                        status: true
+                    }
+                }
             }else{
-                commit('SET_LOADING', false);
+                throw new Error("Нет токена");
             }
         }catch(err){
-            commit('SET_LOADING', false);
-            if(err.response.data){
-                commit('SET_LOAGIN_ERROR', err.response.data.errors);
-            }else{
-                commit('SET_LOAGIN_ERROR', 'Ошибка');
-            }
+            return httpError(err);
         }
     },
-    async REGISTER({ commit }, payload){
+    async REGISTER(payload){
         try{
             const response = await AuthServices.register(payload);
-            if(response.status == 200){
-                commit('')
+            if(response.data.message == 'ok'){
+                return {
+                    status: true
+                }
             }
         }catch(err){
-            console.log(err);
+            return httpError(err);
         }
     }
 }

@@ -5,6 +5,7 @@
             :data="subscriptions"
             @edit="_edit"
             @delete="_delete"
+            isEdit
             actions>
         </a-table>
     </div>

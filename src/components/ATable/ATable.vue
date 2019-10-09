@@ -55,7 +55,9 @@
                             v-if="actions">
                             <v-actions 
                                 @edit="_edit(item._id)" 
-                                @delete="_delete(item._id)">
+                                @delete="_delete(item._id)"
+                                :isEdit="isEdit"
+                                :isDelete="isDelete">
                             </v-actions>
                         </div>
                     </div>
@@ -73,6 +75,8 @@ export default {
         create: String,
         to: String,
         empty: String,
+        isDelete: Boolean,
+        isEdit: Boolean
     },
     computed: {
         length(){

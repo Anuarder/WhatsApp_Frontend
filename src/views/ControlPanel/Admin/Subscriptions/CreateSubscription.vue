@@ -5,7 +5,7 @@
                 <div class="create__back"  @click="$router.back()">
                     <i class="material-icons">arrow_back_ios</i>
                     <u>
-                        СОЗДАТЬ ПОДПИСКУ
+                        РЕДАКТИРОВАТЬ ПОДПИСКУ
                     </u>
                 </div>
                 <form>
