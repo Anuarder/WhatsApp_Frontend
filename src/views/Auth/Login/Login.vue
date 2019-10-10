@@ -29,7 +29,7 @@
                             </router-link>
                         </div>
                         <div class="login__button form-page__button">
-                            <button type="submit" class="w-button">
+                            <button type="submit" class="w-button" :disabled="isLoading">
                                 <span v-if="isLoading">Загрузка...</span>
                                 <span v-else>Войти</span>
                             </button>

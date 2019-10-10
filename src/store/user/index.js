@@ -1,18 +1,12 @@
+import jwt from "jsonwebtoken"
 import AuthServices from "@/services/Auth"
 import httpError from "@/handlers/httpError"
+import reset_password from "./reset_password"
 
 const state = {
     token: null,
-    new_user: {
-        first_name: "",
-        last_name: "",
-        email: "",
-        phone: "",
-        password: ""
-    },
-    user: {
-        role: 'user'
-    },
+    tokenEXP: null,
+    user: null
 }
 
 const getters = {
@@ -30,6 +24,12 @@ const mutations = {
     },
     SET_TOKEN(state, token){
         state.token = token;
+        state.tokenEXP = jwt.decode(token).exp;
+    },
+    LOGOUT(state){
+        state.token = null;
+        state.tokenEXP = null;
+        state.user = null;
     }
 }
 
@@ -37,17 +37,14 @@ const actions = {
     async LOGIN({ commit }, payload){
         try{
             const response = await AuthServices.login(payload);
-            console.log(response)
-            if(response.status === 200){
-                if(response.data.token){
-                    commit('SET_USER', response.data.user);
-                    commit('SET_TOKEN', response.data.token);
-                    return {
-                        status: true
-                    }
+            if(response.data.token){
+                commit('SET_USER', response.data.user);
+                commit('SET_TOKEN', response.data.token);
+                return {
+                    status: true
                 }
             }else{
-                throw new Error("Нет токена");
+                throw new Error("Отсутсвует токен");
             }
         }catch(err){
             return httpError(err);
@@ -56,17 +53,20 @@ const actions = {
     async REGISTER(payload){
         try{
             const response = await AuthServices.register(payload);
-            if(response.data.message == 'ok'){
+            if(response.data.message === 'ok'){
                 return {
                     status: true
                 }
+            }else{
+                throw new Error("Ошибка");
             }
         }catch(err){
             return httpError(err);
         }
-    }
+    },
 }
 
+const modules = [reset_password];
 export default {
-    state, getters, mutations, actions
+    state, getters, mutations, modules, actions
 }

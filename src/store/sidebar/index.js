@@ -2,12 +2,12 @@ const state = {
     sidebar: false
 }
 const getters = {
-    sidebar(state){
+    GET_SIDEBAR(state){
         return state.sidebar
     }
 }
 const mutations = {
-    setSidebar(state, isVisible){
+    SET_SIDEBAR(state, isVisible){
         state.sidebar = isVisible;
     }
 }

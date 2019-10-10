@@ -5,6 +5,9 @@
             <div class="register__content form-page__content">
                 <h1 class="register__title form-page__title">РЕГИСТРАЦИЯ</h1>
                 <div class="register__form form-page__form">
+                    <div class="form-page__error">
+                        {{error_message}}
+                    </div>
                     <form @submit.prevent="register">
                         <div class="register__input form-page__input">
                             <label>Имя</label>
@@ -35,8 +38,13 @@
                             <input type="password" v-model="confirm_password">
                         </div>
                         <div class="register__button form-page__button">
-                            <button type="submit" class="w-button">
-                                Зарегистрироваться
+                            <button type="submit" class="w-button" :disabled="isLoading">
+                                <span v-if="isLoading">
+                                    Загрузка...
+                                </span>
+                                <span v-else>
+                                    Зарегистрироваться
+                                </span>
                             </button>
                         </div>
                     </form>
@@ -51,11 +59,6 @@
         components: {
             PNavigation
         },
-        head(){
-            return{
-                title: "Регистрация",
-            }
-        },
         data(){
             return{
                 first_name: '',
@@ -64,17 +67,31 @@
                 phone: '',
                 confirm_phone: '',
                 password: '',
-                confirm_password: ''
+                confirm_password: '',
+                isLoading: false,
+                error_message: ''
             }
         },
         methods: {
             async register(){
                 try{
-                    const response = 'Register waa';
-                    console.log(response);
-                    this.$router.push('/login')
+                    this.isLoading = true;
+                    const response = this.$store.dispatch('REGISTER', {
+                        first_name: this.first_name,
+                        last_name: this.last_name,
+                        email: this.email,
+                        phone: this.phone,
+                        password: this.password,
+                    });
+                    if(response.status){
+                        this.isLoading = false;
+                        this.$router.push('login')
+                    }else{
+                        throw response;
+                    }
                 }catch(err){
-                    console.log(err);
+                    this.isLoading = false;
+                    this.error_message = err.error;
                 }
             }
         }

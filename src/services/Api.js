@@ -3,10 +3,9 @@ import store from '@/store/index'
 
 export default () => {
     return axios.create({
-        baseURL: `http://192.168.88.29:5000/api`,
+        baseURL: process.env.VUE_APP_API,
         headers: {
           Authorization: `Bearer ${store.state.token}`,
         }
     });
 }
-

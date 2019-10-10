@@ -18,12 +18,10 @@
                         </div>
                     </div>
                     <div class="create__buttons">
-                        <router-link 
-                            to="/user/confirm-subscription-purchase" 
-                            class="w-button" 
-                            tag="button">
+                        <button
+                            class="w-button">
                             Оформить
-                        </router-link>
+                        </button>
                     </div>
                 </form>
             </div>

@@ -15,6 +15,11 @@
     text-align: center;
 }
 
+.form-page__error{
+    color: #FF4A43;
+    font-size: 1.1rem;
+}
+
 .form-page__form{
     margin-top: 3rem;
 }
@@ -58,6 +63,9 @@
     .form-page__title{
         font-size: 1.5rem;
         text-align: center;
+    }
+    .form-page__error{
+        font-size: .9rem;
     }
     .form-page__input{
         margin-top: 1rem;

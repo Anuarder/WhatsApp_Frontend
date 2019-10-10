@@ -3,7 +3,6 @@ export default (err) => {
         status: false, error: data || error
     });
     const response = err.response || undefined;
-    // console.log(err)
     if(err.message === "Network Error"){
         return error("Нет доступа связи к серверу данных!");
     }else if(response){
@@ -18,6 +17,8 @@ export default (err) => {
                 return error(response.data.error, "Ресурс не найден!");
             case 500:
                 return error(response.data.error, "Внутренняя ошибка сервера!");
+            default:
+                return error("Непредвиденная Ошибка")
         }
     }else {
         return error("Ошибка");

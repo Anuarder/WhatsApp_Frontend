@@ -60,12 +60,16 @@ export default {
     computed: {
         ...mapGetters(['GET_USER']),
         links(){
-            return this[`${this.GET_USER.role}_links`]
+            if(this.GET_USER.is_admin){
+                return this.admin_links
+            }else{
+                return this.user_links
+            }
         }
     },
     methods: {
         go(){
-            this.$store.commit('setSidebar', false);
+            this.$store.commit('SET_SIDEBAR', false);
         }
     }
 }

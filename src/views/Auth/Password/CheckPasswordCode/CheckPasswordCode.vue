@@ -45,7 +45,7 @@
         },
         methods: {
             check_password_code(){
-                console.log('setpassword')
+                console.log('21000')
             }
         }
     }

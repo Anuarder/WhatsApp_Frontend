@@ -59,7 +59,7 @@ export default {
                 {
                     id: 1,
                     name: 'Название подписки',
-                    date: '25.10.19 12:00:05',
+                    date: '25.10.2019',
                     isEnd: true
                 }
             ]

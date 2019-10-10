@@ -35,14 +35,17 @@ export default {
         }
     },
     computed: {
-        ...mapGetters(['sidebar'])
+        ...mapGetters(['GET_SIDEBAR']),
+        sidebar(){
+            return this.GET_SIDEBAR;
+        }
     },
     directives: {
         clickOutside: vClickOutside.directive
     },
     methods: {
         hide(){
-            this.$store.commit('setSidebar', false);
+            this.$store.commit('SET_SIDEBAR', false);
         }
     },
 }
