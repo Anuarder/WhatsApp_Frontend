@@ -70,7 +70,7 @@
                     });
                     if(response.status){
                         this.isLoading = false;
-                        this.$router.push('user')
+                        this.$router.push('/user')
                     }else{
                         throw response;
                     }

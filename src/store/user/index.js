@@ -13,9 +13,12 @@ const getters = {
     GET_TOKEN(state){
         return state.token;
     },
+    GET_TOKEN_EXP(state){
+        return state.tokenEXP;
+    },
     GET_USER(state){
         return state.user;
-    },
+    }
 }
 
 const mutations = {
@@ -23,8 +26,9 @@ const mutations = {
         state.user = user;
     },
     SET_TOKEN(state, token){
+        const tokenEXP = jwt.decode(token).exp;
         state.token = token;
-        state.tokenEXP = jwt.decode(token).exp;
+        state.tokenEXP = tokenEXP;
     },
     LOGOUT(state){
         state.token = null;

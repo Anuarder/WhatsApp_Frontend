@@ -23,8 +23,19 @@ const router = new Router({
 })
 
 router.beforeEach((to, from, next) => {
-    console.log(store.getters.GET_TOKEN)
-    next();
+	const requaresAuth = to.matched.some(record => record.meta.requaresAuth);
+    const currentUser = store.getters.GET_TOKEN;
+    const isTimeOver = store.getters.GET_TOKEN_EXP < Math.floor(new Date().getTime() / 1000);
+	if (requaresAuth && !currentUser) {
+		next('/login');
+	} else if (requaresAuth && currentUser) {
+        if(isTimeOver){
+            next('/login');
+        }
+		next();
+	} else {
+		next();
+	}
 });
 
 export default router;

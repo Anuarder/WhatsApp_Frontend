@@ -54,6 +54,14 @@ export default {
                     name: 'Подписки',
                     path: 'admin-subscriptions'
                 },
+                {
+                    name: 'Настройки',
+                    path: 'admin-settings'
+                },
+                {
+                    name: 'Сменить пароль',
+                    path: 'admin-password-reset'
+                }
             ]
         }
     },
