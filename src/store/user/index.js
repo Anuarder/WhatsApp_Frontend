@@ -1,5 +1,6 @@
 import jwt from "jsonwebtoken"
 import AuthServices from "@/services/Auth"
+import UserServices from "@/services/User"
 import httpError from "@/handlers/httpError"
 import reset_password from "./reset_password"
 
@@ -10,15 +11,9 @@ const state = {
 }
 
 const getters = {
-    GET_TOKEN(state){
-        return state.token;
-    },
-    GET_TOKEN_EXP(state){
-        return state.tokenEXP;
-    },
-    GET_USER(state){
-        return state.user;
-    }
+    GET_TOKEN: (state) => (state.token),
+    GET_TOKEN_EXP: (state) => (state.tokenEXP),
+    GET_USER: (state) => (state.user)
 }
 
 const mutations = {
@@ -68,6 +63,20 @@ const actions = {
             return httpError(err);
         }
     },
+    async CHANGE_PASSWORD(payload){
+        try{
+            const response = await UserServices.change_password(payload);
+            if(response.data.status === 'password_has_been_changed'){
+                return {
+                    status: true
+                }
+            }else{
+                throw new Error("Ошибка")
+            }
+        }catch(err){
+            return httpError(err);
+        }
+    }
 }
 
 const modules = [reset_password];

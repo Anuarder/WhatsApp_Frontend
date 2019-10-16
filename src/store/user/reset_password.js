@@ -6,9 +6,7 @@ const state = {
 }
 
 const getters = {
-    GET_RESET_PASSWORD_TOKEN(state){
-        return state.reset_password_token;
-    },
+    GET_RESET_PASSWORD_TOKEN: (state) => (state.reset_password_token)
 }
 
 const mutations = {
